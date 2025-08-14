@@ -4,6 +4,13 @@ This repoository is meant to provide some basic plugins for my other project [Kh
 
 ## Plugins In This Repo
 
+### List Plugins
+
+Lists currently installed plugins
+
+#### Usage
+`plugins` Returns a list of currently installed plugins
+
 ### RNG
 
 Provides some basic random number generation uses.

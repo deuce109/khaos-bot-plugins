@@ -60,7 +60,7 @@ def _dice_rolls(dice: list[str]) -> str:
     
     return output
 
-def execute(args: list[str]) -> str:
+def execute(args: list[str],_) -> str:
     if not args:
         return help_text
     

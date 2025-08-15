@@ -1,5 +1,4 @@
 import os
-import urllib3
 import logging
 import requests
 
@@ -23,7 +22,7 @@ def _get_local_ip() -> str:
         return ""
         
 
-def execute(_: list[str]) -> str:
+def execute(_: list[str], __) -> str:
     message_lines = ["# Servers"]
     message_lines.append(_get_local_ip())
     message_lines.append(_get_external_ip())

@@ -42,3 +42,11 @@ Example: `random dice 2d6 1d20`
 ### Source
 #### Usage
 `source` Returns the source code for the bot
+
+## Supporting
+If you want to support development of this bot you can do so in a few ways
+### Donation
+Kofi - https://ko-fi.com/deuce109
+Patreon - https://www.patreon.com/c/deuce109
+### Development
+If you would like to contribute to Khaos Bot then you will need the latest version of python available at https://www.python.org/downloads/

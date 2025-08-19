@@ -29,15 +29,20 @@ random_arg_re = re.compile(r"--(min|max|digits|amount) (-?\d+)")
 dice_arg_re = re.compile(r"(\d+)[dD](\d+)")
 
 def _generate_random_numbers(command_string: str) -> str:
-    parsed_args = {match.group(1): int(match.group(2)) 
+    parsed_args = {match.group(1): int(match.group(2))
             for match in random_arg_re.finditer(command_string)}
-    return _random_numbers(parsed_args['min'], parsed_args['max'], parsed_args.get('digits'), parsed_args.get('amount', 1))
+    return _random_numbers(
+        parsed_args.get('min',0),
+        parsed_args.get('max',100),
+        parsed_args.get('digits', None),
+        parsed_args.get('amount', 1)
+    )
 
 def _random_numbers(min_value: int = 1, max_value: int = 100, digits: Optional[int] = None, amount: int = 1) -> str:
     if digits is not None:
         min_value = -int("9" * digits)
         max_value = int("9" * digits)
-    
+
     return ",".join([str(random.randint(min_value, max_value)) for _ in range(amount)])
 
 def _parse_dice_arguments(arg: list[str]) -> dict[int, int]:
